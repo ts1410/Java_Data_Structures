@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Permutations {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.next();
         ArrayList<String> ans = perm(s);
