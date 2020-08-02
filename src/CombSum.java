@@ -1,13 +1,14 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CombSum
 {
     public static void main(String[] args) {
-        int[] candidates = {2, 3, 6, 7};
-        int target = 7;
+        int[] candidates = {10,1,2,7,6,1,5};
+        int target = 8;
         List<List<Integer>> ans = new ArrayList<>();
-        combSum(candidates, target, ans, new ArrayList<Integer>(), 0, 0);
+        combSum(candidates, target, ans, new ArrayList<Integer>(), -1, 0);
         System.out.println(ans);
     }
     public static void combSum(int[] candidates, int target, List<List<Integer>> ans, ArrayList<Integer> temp, int lastIndex, int currSum)
@@ -15,6 +16,8 @@ public class CombSum
         if(currSum == target)
         {
 //            System.out.println(temp);
+            Collections.sort(temp);
+            if(!ans.contains(temp))
             ans.add(new ArrayList<>(temp));
             return;
         }
@@ -22,7 +25,7 @@ public class CombSum
         {
             return;
         }
-        for(int i = lastIndex; i<candidates.length; i++)
+        for(int i = lastIndex + 1; i<candidates.length; i++)
         {
             if(currSum + candidates[i]<=target) {
                 temp.add(candidates[i]);
