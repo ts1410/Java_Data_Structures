@@ -1,4 +1,7 @@
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class TOH {
     public static void main(String[] args) {
@@ -17,3 +20,9 @@ public class TOH {
         toh(n - 1, helper, dest, src);
     }
 }
+
+//arr1 = sortArray(arr1);
+//arr2 = sortArray(arr2);
+//if(arr1[0]<arr2[0])
+//    return arr1[0];
+//return arr2[0];
